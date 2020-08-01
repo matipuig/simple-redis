@@ -1,0 +1,14 @@
+Para trabajar con todo esto:
+Instalar Visual Studio Code (https://code.visualstudio.com/download)
+
+Descargar en la aplicación los plugins:
+eslint (eslint.org)
+prettier (prettier.io)
+stylelint (stylelint.io)
+
+Seguir las reglas de:
+https://github.com/airbnb/javascript
+https://github.com/airbnb/javascript/tree/master/react
+https://github.com/airbnb/css
+
+Después, se puede trabajar con los comandos que están en el package con npm run.
