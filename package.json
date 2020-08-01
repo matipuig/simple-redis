@@ -1,7 +1,7 @@
 {
-  "name": "simple-redis",
+  "name": "redis-simple-client",
   "description": "A package to control Redis in a simple way",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Matias Puig",
   "license": "MIT",
   "homepage": "https://www.github.com/matipuig",
