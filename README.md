@@ -17,9 +17,9 @@ const redis = new RedisSimpleClient();
 ### Usage for dictionary
 ```javascript
 async function test(){
-  // You can set the URL for the connection, you will NOT use it for pub/sub.
+  // You can set the URL for the connection, if the third argument is FALSE you will NOT use it for pub/sub.
   // The prefix helps you using the same redis client for different apps in the same database.
-  // You can have prefix_variable, prefix_variable2, etc. 
+  // You will have prefix_variable, prefix_variable2, etc. in the redis store. 
   await redis.connect('redis://localhost:6379', 'prefix_', false);
   
   // Set and get variables.
@@ -42,7 +42,7 @@ async function test(){
   
   // Deleting values
   await redis.del(['var1']);
-  await redis.delWithPattern('var1*');
+  await redis.delWithPattern('var1*'); // Will delete var1 and var10.
   
   // Counting and getting keys with patterns.
   await redis.keys('*'); //  Output: ['var2']
@@ -63,7 +63,7 @@ async function test(){
   await redis.connect('redis://localhost:6379', 'prefix_', true);
   
   await redis.subscribe('CHANNEL', (message) => console.log(message));
-  await redis.publish('CHANNEL', 'Hello!');
+  await redis.publish('CHANNEL', 'Hello!'); // Console will log "Hello!".
   await redis.unsubsribe('CHANNEL');
   await redis.close();
 }
